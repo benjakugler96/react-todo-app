@@ -9,7 +9,8 @@ export const CardContainer = styled.div`
   margin 20px 0;
 
 
-  transform: ${({animateRemove}) => animateRemove ? 'translateX(200%)' : 'translateX(0)'};
+  transform: ${({ animateRemove }) =>
+    animateRemove ? "translateX(200%)" : "translateX(0)"};
   transition: all 0.8s ease;
 `;
 
@@ -19,6 +20,10 @@ export const CardHeader = styled.div`
   justify-content: space-between;
   padding: 5px 25px;
   text-transform: uppercase;
+
+  .icons-container {
+    min-width: 80px;
+  }
 
   .icons-container svg {
     padding-left: 10px;
@@ -40,7 +45,7 @@ export const CardBody = styled.div`
 
 export const CardRow = styled.div`
   align-items: center;
-  background-color: ${({ grayRow }) => grayRow ? colors.neutral02 : '#fff' };
+  background-color: ${({ grayRow }) => (grayRow ? colors.neutral02 : "#fff")};
   display: flex;
   padding: 5px 25px;
 
@@ -58,10 +63,9 @@ export const CardFooter = styled.div`
     display: flex;
     justify-content: flex-end;
     margin-right: 5px;
-    
+
     input {
       margin-right: 5px;
     }
   }
-
 `;
