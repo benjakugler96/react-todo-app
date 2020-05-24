@@ -3,13 +3,18 @@ import { colors } from "../../utils/colors";
 
 export const HeaderContainer = styled.header`
   width: 100vw;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -32px;
+  z-index: 50;
 `;
 
 export const HeaderTop = styled.div`
   align-items: center;
   background-color: ${colors.blue02};
   display: flex;
-  padding: 4px;
+  padding: 2px 4px;
+  height: 28px;
 
   a {
     color: black;

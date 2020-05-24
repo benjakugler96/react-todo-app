@@ -5,20 +5,22 @@ import Todos from "../todos";
 import Favorites from "../favorites";
 import Incomplete from "../incomplete";
 import TasksSearch from "../tasks-search";
-import { TemplateContainer } from "./styles";
+import { TemplateContainer, TemplateContainerOverFlow } from "./styles";
 
 const Template = () => (
   <Router>
     <Header />
-    <TemplateContainer>
-      <Modal />
-      <Switch>
-        <Route exact path="/" component={Todos} />
-        <Route exact path="/favs" component={Favorites} />
-        <Route exact path="/incomplete" component={Incomplete} />
-        <Route exact path="/search/:taskTitle" component={TasksSearch} />
-      </Switch>
-    </TemplateContainer>
+    <TemplateContainerOverFlow>
+      <TemplateContainer>
+        <Modal />
+        <Switch>
+          <Route exact path="/" component={Todos} />
+          <Route exact path="/favs" component={Favorites} />
+          <Route exact path="/incomplete" component={Incomplete} />
+          <Route exact path="/search/:taskTitle" component={TasksSearch} />
+        </Switch>
+      </TemplateContainer>
+    </TemplateContainerOverFlow>
   </Router>
 );
 
