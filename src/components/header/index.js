@@ -8,10 +8,10 @@ const Header = () => (
 		<HeaderTop>
 			<FaGithubSquare size="26px" color="#d7d7d7" />
 			<a
-				href="https://github.com/benjakugler96/benjakugler96.github.io"
+				href="https://github.com/benjakugler96/react-todo-app"
 				target="_blank"
 			>
-				https://github.com/benjakugler96/benjakugler96.github.io
+				https://github.com/benjakugler96/react-todo-app
 			</a>
 		</HeaderTop>
 		<HeaderBottom>
