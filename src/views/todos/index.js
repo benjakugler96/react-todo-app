@@ -28,10 +28,10 @@ const Todos = () => {
       }
     };
     if (!todos.length) setupView();
-  }, []);
+  }, [dispatch, todos.length]);
   return (
     <>
-      <ViewHeader title="Todos list" />
+      <ViewHeader title="Todos list" count={todos.length} />
       {loading && <Spinner />}
       {!loading && todos.map((todo) => <Card todo={todo} key={todo.id} />)}
       {hasFailed && "nope"}

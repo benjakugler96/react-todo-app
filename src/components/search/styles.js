@@ -14,5 +14,13 @@ export const SearchContainer = styled.div`
   button {
     padding: 8px;
     border-radius: 0 2px 2px 0;
+    cursor: pointer;
+
+    :active,
+    :hover {
+      svg {
+        fill: black;
+      }
+    }
   }
 `;

@@ -14,7 +14,7 @@ const Todos = () => {
   }, [todos]);
   return (
     <>
-      <ViewHeader title="Incomplete" />
+      <ViewHeader title="Incomplete" count={incompleteTodos.length} />
       {incompleteTodos.map((todo) => (
         <Card todo={todo} key={todo.id} />
       ))}

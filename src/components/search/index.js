@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import { SearchContainer } from "./styles";
 
-const Search = ({ onClick }) => {
+const Search = () => {
   const [text, setText] = useState("");
+
   return (
     <SearchContainer>
       <input
@@ -12,9 +14,11 @@ const Search = ({ onClick }) => {
         onChange={(event) => setText(event.target.value)}
         value={text}
       />
-      <button onClick={onClick}>
-        <FaSearch />
-      </button>
+      <Link to={`/search/${text}`}>
+        <button onClick={() => setText("")}>
+          <FaSearch />
+        </button>
+      </Link>
     </SearchContainer>
   );
 };

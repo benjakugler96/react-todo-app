@@ -1,7 +1,10 @@
-export { default as Header } from "./header";
-export { default as NavMenu } from "./nav-menu";
-export { default as Search } from "./search";
-export { default as ViewHeader } from "./view-header";
-export { default as Card } from "./card";
 export { default as Button } from "./button";
+export { default as Card } from "./card";
+export { default as Header } from "./header";
+export { default as Modal } from "./modal";
+export { default as NavMenu } from "./nav-menu";
+export { default as ProgressBar } from "./progress-bar";
+export { default as Search } from "./search";
 export { default as Spinner } from "./spinner";
+export { default as TaskForm } from "./task-form";
+export { default as ViewHeader } from "./view-header";

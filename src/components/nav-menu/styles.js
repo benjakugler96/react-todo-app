@@ -8,6 +8,7 @@ list-style: none;
 li {
   a {
     color: ${colors.neutral01};
+    cursor: pointer;
     display: block;
     padding: 15px;
     text-decoration: none;

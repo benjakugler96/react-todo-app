@@ -1,8 +1,8 @@
 import React from "react";
 import { ViewHeaderContainer } from "./styles";
 
-const ViewHeader = ({ title }) => (
-  <ViewHeaderContainer>{title}</ViewHeaderContainer>
+const ViewHeader = ({ title, count }) => (
+  <ViewHeaderContainer>{title} {count ? `- ${count}` : ''}</ViewHeaderContainer>
 );
 
 export default ViewHeader;

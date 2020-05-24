@@ -1,9 +1,18 @@
-import { ADD_FAV, ADD_NOTE, COMPLETE_TASK, GET_TODOS, GET_TODOS_ERROR, GET_TODOS_SUCCESS, REMOVE_TASK } from "../constants";
+import {
+  ADD_FAV,
+  ADD_TASK,
+  ADD_NOTE,
+  COMPLETE_TASK,
+  GET_TODOS,
+  GET_TODOS_ERROR,
+  GET_TODOS_SUCCESS,
+  REMOVE_TASK,
+} from "../constants";
 
 const initialState = {
   todos: [],
   loading: false,
-  hasFailed: false
+  hasFailed: false,
 };
 
 const todosReducer = (state = initialState, { type, payload }) => {
@@ -12,67 +21,81 @@ const todosReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         loading: true,
-        hasFailed: false
+        hasFailed: false,
       };
     case GET_TODOS_SUCCESS:
       return {
         ...state,
         todos: payload || initialState.todos,
-        loading: false
+        loading: false,
       };
     case GET_TODOS_ERROR:
       return {
         ...state,
         loading: false,
-        hasFailed: true
+        hasFailed: true,
       };
     case ADD_FAV:
       const newTodosWithFav = state.todos.map((todo) => {
         if (todo.id === payload) {
           return {
             ...todo,
-            isFav: !todo.isFav
-          }
-        };
-        return todo
-      })
+            isFav: !todo.isFav,
+          };
+        }
+        return todo;
+      });
       return {
         ...state,
         todos: newTodosWithFav,
-      }
+      };
     case COMPLETE_TASK:
       const newTodosWithCompleted = state.todos.map((todo) => {
         if (todo.id === payload) {
           return {
             ...todo,
-            completed: true
-          }
-        };
-        return todo
-      })
+            completed: true,
+          };
+        }
+        return todo;
+      });
       return {
         ...state,
         todos: newTodosWithCompleted,
-      }
+      };
     case REMOVE_TASK:
       return {
         ...state,
-        todos: state.todos.filter((todo) => todo.id !== payload)
-      }
+        todos: state.todos.filter((todo) => todo.id !== payload),
+      };
     case ADD_NOTE:
       const newTodosWithNote = state.todos.map((todo) => {
         if (todo.id === payload.id) {
           return {
             ...todo,
-            notes: todo.notes ? [...todo.notes, payload.note] : [payload.note]
-          }
+            notes: todo.notes ? [...todo.notes, payload.note] : [payload.note],
+          };
         }
         return todo;
       });
       return {
         ...state,
         todos: newTodosWithNote,
-      }
+      };
+    case ADD_TASK:
+      const id = state.todos.length + 1;
+      let newArray = state.todos;
+      const newTodo = {
+        ...payload,
+        id,
+      };
+      newArray.unshift(newTodo);
+
+      return {
+        ...state,
+        todos: newArray,
+      };
+
     default:
       return state;
   }

@@ -14,7 +14,7 @@ const Todos = () => {
   }, [todos]);
   return (
     <>
-      <ViewHeader title="Favorites" />
+      <ViewHeader title="Favorites" count={favsTodos.length} />
       {favsTodos.map((todo) => (
         <Card todo={todo} key={todo.id} />
       ))}
